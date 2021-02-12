@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  div
-    h5 タイトル
+  form(method="post", action="/view")
+    div
+      h5 タイトル
+      input(type="text" name="contentTitle")
+    div
+      h5 スケジュールタイプ
+      input(type="text" name="contentType")
+    div
+      h5 開始日時
+      input(type="text" name="contentStartDate")
+    div
+      h5 終了日時
+      input(type="text" name="contentEndDate")
+    button(type="submit") 作成
