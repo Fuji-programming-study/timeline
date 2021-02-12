@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// モデルの読み込み
+var Content = require('./models/content');
+Content.sync();
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var viewRouter = require('./routes/view');
