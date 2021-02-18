@@ -15,3 +15,18 @@ block content
       h5 終了日時
       input(type="text" name="contentEndDate")
     button(type="submit") 作成
+  - var hasContent = contents.length > 0
+  if hasContent
+    h3 コンテンツ一覧
+    table
+      tr
+        th タイトル
+        th 表示形式
+        th 開始日時
+        th 終了日時
+      each content in contents
+        tr
+          td #{content.contentTitle}
+          td #{content.contentType}
+          td #{content.contentStartDate}
+          td #{content.contentEndDate}
