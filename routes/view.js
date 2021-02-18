@@ -5,7 +5,13 @@ const uuid = require('uuid');
 const Content = require('../models/content');
 
 router.get('/', (req, res, next) => {
-  res.render('view');
+  Content.findAll({
+    order: [['"updatedAt"', 'DESC']]
+  }).then((contents) => {
+    res.render('view', {
+      contents
+    });
+  });
 });
 
 router.post('/', (req, res, next) => {
